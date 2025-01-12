@@ -29,7 +29,7 @@ public class Example9_dop {
         }
     }
 
-    public static String encrypt(String text, int shift, String alphabet) {
+    public static String encrypt(String text, int key, String alphabet) {
         StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < text.length(); i++) {
@@ -39,14 +39,14 @@ public class Example9_dop {
                 continue;
             }
 
-            int shiftedIndex = (alphabet.indexOf(currentChar) + shift) % alphabet.length();
-            result.append(alphabet.charAt(shiftedIndex));
+            int keyIndex = (alphabet.indexOf(currentChar) + key) % alphabet.length();
+            result.append(alphabet.charAt(keyIndex));
         }
 
         return result.toString();
     }
 
-    public static String decrypt(String text, int shift, String alphabet) {
+    public static String decrypt(String text, int key, String alphabet) {
         StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < text.length(); i++) {
@@ -56,8 +56,8 @@ public class Example9_dop {
                 continue;
             }
 
-            int shiftedIndex = (alphabet.indexOf(currentChar) - shift + alphabet.length()) % alphabet.length();
-            result.append(alphabet.charAt(shiftedIndex));
+            int keyIndex = (alphabet.indexOf(currentChar) - key + alphabet.length()) % alphabet.length();
+            result.append(alphabet.charAt(keyIndex));
         }
 
         return result.toString();
