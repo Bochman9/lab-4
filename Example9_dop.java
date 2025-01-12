@@ -5,13 +5,13 @@ public class Example9_dop {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Введите текст для шифрования: ");
-        String inputText = scanner.nextLine();
+        String text = scanner.nextLine();
 
         System.out.print("Введите ключ: ");
         int key = scanner.nextInt();
         scanner.nextLine();
 
-        String encryptedText = encrypt(inputText, key, alphabet);
+        String encryptedText = encrypt(text, key, alphabet);
         System.out.println("Текст после преобразования: " + encryptedText);
 
         String decryptedText = decrypt(encryptedText, key, alphabet);
